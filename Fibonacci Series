@@ -1,0 +1,17 @@
+//FIBONACCI SERIES[0,1,1,2,3,5,8,13.........](we must have 2 numbers initially)
+#include<iostream>
+using namespace std;
+int main(){
+    int n;
+    cin>>n;
+    int a=0;
+    int b=1;
+    cout<<a<<" "<<b;
+    for (int i=1;i<=n;i++){
+        int Nextnum=a+b;
+        cout<<" "<<Nextnum;
+        a=b;
+        b=Nextnum;
+    }
+
+}
