@@ -1,0 +1,19 @@
+#include<iostream>
+using namespace std;
+int main(){
+    int num;
+    cin>>num;
+    int i;
+    for(i=2;i<num;i++){
+        if(num%i==0){
+            cout<<"Not Prime"<<endl;
+            break;
+        }
+    }
+    if(i==num)/*here we have applied if condition to check if the loop is completed or terminated using break
+    i.e if loop is completed that means num was not divisible by any other number so it is prime*/
+    {
+        cout<<"Prime\n";
+    }
+return 0;
+}
