@@ -1,0 +1,23 @@
+#include<iostream>
+using namespace std;
+int main(){
+        int amount,balance;
+        cout<<" Enter Amount=";
+        cin>>amount;
+        int hundreds,fifties,twenties,ones;
+        switch(1){
+                case 1:hundreds=amount/100;
+                        balance=amount-(100*hundreds);
+                        cout<<"No of 100Rs notes="<<hundreds<<endl;
+                case 2:fifties=balance/50;
+                        balance=balance-(50*fifties);
+                        cout<<"No of 50Rs notes="<<fifties<<endl;
+                case 3:twenties=balance/20;
+                        balance=balance-(20*twenties);
+                        cout<<"No of 20Rs notes="<<twenties<<endl;
+                case 4:ones=balance/1;
+                        balance=balance-(ones);
+                        cout<<"No of 1Rs notes="<<ones<<endl;                       
+        }
+        
+}
