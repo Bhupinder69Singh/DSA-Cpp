@@ -20,4 +20,5 @@ int main(){
                 case '/':cout<<"Output="<<a/b<<endl;
                         break;
         }
+     return 0;
 }
