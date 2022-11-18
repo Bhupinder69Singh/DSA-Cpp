@@ -19,6 +19,7 @@ int main(){
                         break;        
                 case '/':cout<<"Output="<<a/b<<endl;
                         break;
+                default:cout<<"enter valid operation"<<endl;
         }
      return 0;
 }
