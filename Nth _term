@@ -1,0 +1,13 @@
+#include<iostream>
+using namespace std;
+int ap(int n){
+        cin>>n;
+        int ap=(3*n)+7;
+        return ap;
+        }
+int main(){
+        int n;
+        cout<<"Enter a number:";
+        int n_th_term=ap(n);
+        cout<<"N-th term is = "<<n_th_term<<endl;
+}
