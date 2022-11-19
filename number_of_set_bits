@@ -1,0 +1,27 @@
+#include<iostream>
+#include<math.h>
+using namespace std;
+int set_bits(int n){
+        cout<<"Enter number:";
+        cin>>n;
+        int digit=0;
+        int answer=0;
+        int counter=0;
+        int i=0;
+        while(n!=0){
+                int bit=n&1;
+                if (bit==1){
+                        counter++;
+                }
+                answer=(bit*pow(10,i))+answer;
+                n=n>>1;
+                i++;
+    }
+    return counter;
+}
+int main(){
+        int a,b;
+        a=set_bits(a);
+        b=set_bits(b);
+        cout<<"Number of set bits="<<a+b;
+}
