@@ -1,0 +1,20 @@
+#include<iostream>
+#include<math.h>
+using namespace std;
+int Fibonnaci(int n){
+        cout<<"Enter nth term:";
+        cin>>n;
+        int a=0;
+        int b=1;
+        for(int i=1;i<n;i++){
+                int Next_number=a+b;
+                a=b;
+                b=Next_number;
+        }
+        return a;
+}
+int main(){
+        int a,x;
+        a=Fibonnaci(a); 
+        cout<<"Nth term="<<a;     
+}
