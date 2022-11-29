@@ -1,0 +1,35 @@
+#include<iostream>
+using namespace std;
+int BinarySearch(int arr[],int size,int key){
+    int start=0;//starting index of array
+    int end=size-1;
+    /*int mid=(start+end)/2; logically this is correct but it might be possible when we add start and end it might exceed
+            range of integer[2^31 - 1] so we use optimised formula*/
+    int mid=start+((end-start)/2);
+    while(start<=end)//loop will run until start is less than end
+    {   
+       
+        if(arr[mid]==key){
+            return mid;
+        }
+        //right wala part
+        if(key>arr[mid]){
+            start=mid+1;
+        }
+        else{
+            end=mid-1;
+        }
+        mid=start+((end-start)/2);
+    }
+    return -1;
+}
+int main(){
+    int even[6]={15,21,25,34,45,50};   
+    int odd[7]={7,8,9,10,11,12,13};
+
+    int index_even=BinarySearch(even,6,45);
+    cout<<"INDEX_EVEN = "<<index_even<<endl;
+
+    int index_odd=BinarySearch(odd,7,8);
+    cout<<"INDEX_ODD = "<<index_odd;
+}
