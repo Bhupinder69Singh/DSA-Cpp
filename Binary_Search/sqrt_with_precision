@@ -1,0 +1,49 @@
+#include<iostream>
+using namespace std;
+
+ long long int sqrt_int(int n){
+		int s=0;
+        int e=n;
+	     long long mid=s+(e-s)/2;
+        long long int ans=-1;
+    
+        while(s<=e){
+            long long int square=mid*mid;
+            if(square==n)
+                return mid;
+            if(square<n){
+                ans=mid;
+                s=mid+1;
+            }
+            else{
+                e=mid-1;
+            }        
+			 mid=s+(e-s)/2;
+        }
+         return ans;
+	}
+double moreprecision(int n,int precision,int temp_sol)
+    //n is the number in input
+    //precision is number of decimal places after int
+    //temp_sol is the integer square root part
+    {
+        double factor=1;
+        double ans=temp_sol;
+        for(double i=0;i<precision;i++){
+            factor=factor/10;
+            for(double j=ans;j*j<n;j=j+factor)//this loop will iterate through values 0.1,0.2,.....n-1
+            {
+                ans=j;
+            }
+        }
+        return ans;
+}
+int main(){
+    int n;
+    cout<<"Enter Number:";
+    cin>>n;
+    int temp_sol=sqrt_int(n);
+    
+    cout<<"Answer="<<moreprecision(n,3,temp_sol);
+
+}
