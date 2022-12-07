@@ -4,14 +4,22 @@
 void bubbleSort(vector<int>& arr, int n)
 {   
     for (int i=1;i<n;i++)//this loop is for rounds starting from 1 to <n
+    
     /*here if i starts from 0 then for next loop in first round n-i will fail as n-0=n and we have to compare last element with next element which exceeds 
     length of array (doesn't exist )*/
+    
+    bool swapped=false;//this is for best case i.e array is already sorted and time complexity will be O(n)
+    
     {
         for(int j=0;j<n-i;j++)//this loop is for placing the ith element in its right place 
         {
             if(arr[j]>arr[j+1]){
-                swap(arr[j],arr[j+1]);
+              swap(arr[j],arr[j+1]);
+              swapped=true;
             }
         }
+       if(swapped==false){
+        break;
+       }
     }
 }
