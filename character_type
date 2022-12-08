@@ -1,0 +1,16 @@
+#include<iostream>
+#include<cctype>//cctype is a character library used for character functions
+using namespace std;
+int main(){
+    char ch;
+    cin>>ch;
+    if (isupper(ch)){
+        cout<<"This is UpperCase"<<endl;
+    }
+    else if(islower(ch)){
+        cout<<"This is LowerCase"<<endl;
+    }
+    else if(isdigit(ch)){
+        cout<<"This is Numeric"<<endl;
+    }
+}
