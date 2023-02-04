@@ -1,0 +1,40 @@
+#include<iostream>
+using namespace std;
+int largest_row_sum(int arr[][3],int row,int col){
+    int largest_sum=INT_MIN;
+    int Row_index=-1;
+        for(int row=0;row<3;row++){
+            int sum=0;
+            for(int col=0;col<3;col++){
+                sum +=arr[row][col];
+        }
+        if(sum>largest_sum){
+            largest_sum=sum;
+            Row_index=row;
+        }
+        }
+        cout<<"largest row row sum is--->"<<largest_sum<<endl;
+        return Row_index;
+}
+void row_sum(int arr[][3],int row,int col){
+        for(int row=0;row<3;row++){
+            int sum=0;
+            for(int col=0;col<3;col++){
+                sum +=arr[row][col];
+        }
+        cout<<sum<<" ";
+        }
+    }int main(){
+    int arr[3][3];
+    for(int row=0;row<3;row++){
+        for(int col=0;col<3;col++){
+            cin>>arr[row][col];
+        }
+    }
+    row_sum(arr,3,3);
+    cout<<endl;
+    //col_sum(arr,3,3);
+    int INDEX=largest_row_sum(arr,3,3);
+    cout<<"its row index is--->"<<INDEX;
+    return 0;
+}
