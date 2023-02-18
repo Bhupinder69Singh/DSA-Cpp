@@ -1,0 +1,16 @@
+#include<iostream>
+using namespace std;
+int main(){
+    int arr[10]={2,5,10};
+    cout<<"address of arr "<<arr<<endl;
+    cout<<"address of 1st Block of array "<<&arr[0]<<endl;
+    cout<<"address of 2nd Block of array "<<&arr[1]<<endl;
+    cout<<"Value "<<*arr<<endl;
+    cout<<"Value "<<*arr+1<<endl;//value at first block is 2 so answer=3
+    cout<<"Value at !st index "<<*(arr+1)<<endl;
+    //arr[i]=*(arr+i)  OR i[arr]=*(i+arr)
+    int i=2;
+    cout<<"Value at ith index"<<i[arr]<<endl;
+    //Pointer ka size hota hai 8byte kyuki vo 
+
+}
