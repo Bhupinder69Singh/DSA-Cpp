@@ -1,0 +1,33 @@
+#include<iostream>
+using namespace std;
+int factorial(int n){
+    //BASE CASE IS NECESSARY IN RECURSION it specifies where to stop function call
+    if(n==0){
+        return 1;
+    }
+    // int smallerproblem=factorial(n-1);
+    // int biggerproblem=n*smallerproblem;
+    // return biggerproblem;
+    return n*factorial(n-1);
+
+}
+void counting1(int n){
+    if(n==0){//base condition
+        return ;
+    }
+    cout<<n<<endl;//processing
+    counting1(n-1);//recursive relation this is TAIL RECURSION as R.R is last 
+}
+void counting2(int n){
+    if(n==0){//base condition
+        return ;
+    }
+    counting2(n-1);//recursive relation this is HEAD RECURSION as R.R is before processing 
+    cout<<n<<endl;//processing
+}
+int main(){
+    int n;
+    cin>>n;
+    // cout<<"Factorial of n="<<factorial(n);
+    counting2(n);
+}
