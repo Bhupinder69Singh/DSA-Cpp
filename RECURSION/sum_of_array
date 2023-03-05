@@ -1,0 +1,21 @@
+#include<iostream>
+using namespace std;
+int Sum(int *arr1,int size){
+    //base case 
+    if(size==0){
+        return 0;
+    }
+    if(size==1){
+        return arr1[0];
+    }
+    //recursive relation
+    int rem=Sum(arr1+1,size-1);
+    int ans=arr1[0]+rem;
+    return ans;
+
+}
+int main(){
+    int arr[5]={2,3,4,1,6};
+    int size=5;
+     cout<<Sum(arr,5);
+}
