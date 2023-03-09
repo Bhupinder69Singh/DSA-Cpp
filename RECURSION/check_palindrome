@@ -1,0 +1,31 @@
+#include<iostream>
+using namespace std;
+
+bool check_palindrome(string&name,int i,int j){
+    //base case
+    if(i>j){
+        return true;
+    }
+    //solving 1 case
+    if(name[i]!=name[j]){
+        return false;
+    }
+    else{
+        return true;
+    }
+    i++;
+    j--;
+    //recursive call
+    check_palindrome(name,i,j);
+}
+int main(){
+    string name="racecar";
+    // reverse(name,0,name.length()-1);
+    bool ans=check_palindrome(name,0,name.length()-1);
+    if(ans==true){
+        cout<<"Is Palindrome"<<endl;
+    }
+    else{
+        cout<<"Not A Palindrome"<<endl;
+    }
+}
