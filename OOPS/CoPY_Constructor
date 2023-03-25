@@ -1,0 +1,23 @@
+#include<iostream>
+using namespace std;
+
+
+class Hero{
+private:
+int health;
+    public:
+    char level;
+    char *name;
+    
+    //COPY CONSTRUCTOR
+    Hero(Hero& temp){
+        cout<<"Khudka copy constructor called"<<endl;
+        this->health=temp.health;
+        this->level=temp.level;
+    }
+void setName(char name[]){
+        strcpy(this->name,name);
+    }
+int main(){
+
+}
