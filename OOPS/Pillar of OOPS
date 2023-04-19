@@ -1,0 +1,192 @@
+//THERE ARE 4 BASIC PILLARS OF OOPS ---> Inheritence,Polymorphism,Abstraction,Encapsulation
+//PILLARS OF OOPS 
+#include<iostream>
+using namespace std;
+//ENCAPSULATION-->wrapping of data members and functions into a class
+// class Student{
+//     int ID;
+//     string name;
+//     string Branch;
+
+//     public:
+//     int getID(){
+//         return this->ID;
+//     }
+// };
+
+//INHERITANCE-->inheriting properties from other class
+// class Human{
+//     protected:
+//     int height;
+
+//     private:
+//     int age;
+//     public:
+//     int YOB;
+
+//     public:
+//     int getAge(){
+//         return this->age;
+//     }
+
+//     void setHeight(int h){
+//         this->height=h;
+//     }
+// };
+// //In protected mode Male can access properties of Human only inside male class 
+// class Male:public Human{
+//     public:
+//     string color;
+
+//     public:
+//     void sleep(){
+//         cout<<"Male is Sleeping";
+//     }
+//     int getHeight(){
+//         return this->height;//getter
+//     }
+//     int getAge(){
+//         return this->age;
+//     }
+// };
+//----------------------------------------------------------------------------------------------------------------------------//
+//SINGLE INHERITENCE
+
+class Animal{
+    public:
+    int age;
+    string name;
+
+    public:
+    void barks(){
+        cout<<"BARKING"<<endl;
+    }
+    void func(){
+        cout<<"World"<<endl;
+    }
+};
+class Human{
+    public:
+    int YOB;
+    string gender;
+
+    public:
+    void speak(){
+        cout<<"Speaking"<<endl;
+    }
+
+    void func(){
+        cout<<"Hello"<<endl;
+    }
+};
+
+class Dog:public Animal{
+    public:
+    string color;
+
+    public:
+    void sound(){
+        cout<<"Barks"<<endl;
+    }
+};
+//MULTI LEVEL INHERITENCE
+class Labrador:public Dog{
+    public:
+    string gender;
+
+    public:
+    void runs(){
+        cout<<"Runs"<<endl;
+    }
+};
+
+//MULTIPLE INHERITANCE
+class multi:public Human,public Animal{
+    public:
+    void func(){
+        cout<<"BHUPI"<<endl;
+    }
+};
+
+//HIERACHICAL
+class A{
+    public:
+    int num;
+    string word;
+
+    public:
+    void func1(){
+        cout<<"Inside Function 1"<<endl;
+    }
+};
+class B:public A{
+    public:
+    int num2;
+    string word2;
+
+    public:
+    void func2(){
+        cout<<"Inside Function 2"<<endl;
+    }
+};
+class C:public A {
+    public:
+    int num3;
+    string word3;
+
+    public:
+    void func3(){
+        cout<<"Inside Function 3"<<endl;
+    }
+};
+
+
+
+int main(){
+
+    multi obj1;
+    obj1.Animal::func();
+    obj1.Human::func();
+    obj1.multi::func();
+
+
+
+
+
+
+
+
+    // B object1;
+    // object1.func1();
+    // object1.func2();
+
+    // C object2;
+    // object2.func1();
+    // object2.func3();
+
+
+
+
+    // A object3;  parent class cannot access its childs properties
+    // object3.func3();
+
+
+
+    // multi m1;
+    // m1.speak();
+    // m1.barks();
+
+   
+   // Male m1;
+   // cout<<m1.getHeight()<<endl;
+
+
+
+//    Male john;
+//    cout<<john.age<<endl;
+//    john.setHeight(172);
+//    cout<<john.height<<endl;
+//    cout<<john.YOB<<endl;
+//    john.sleep();
+    return 0;
+}
