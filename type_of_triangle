@@ -1,0 +1,21 @@
+//to check if triangle is scalene,isoceles,equilateral 
+ #include<iostream>
+ using namespace std;
+ int main(){
+    int sideA,sideB,sideC;
+    cout<<"Enter 3 sides of a triangle"<<endl;
+    cin>>sideA>>sideB>>sideC;
+    if (sideA==sideB && sideA==sideC)// here '&' is 'AND' operator it is used because we can only compare 2 condition
+    {
+         cout<<"Traiangle is Equilateral"<<endl;
+     }
+     else if (sideA==sideB||sideB==sideC||sideA==sideC)// here '||' is 'OR' operator and we compare 2 sides
+     {
+         cout<<"Traingle is Isoceles"<<endl;
+     }
+     else
+    {
+        cout<<"Triangle is Scalene"<<endl;
+     }
+ return 0;   
+ }
